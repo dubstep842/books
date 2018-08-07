@@ -2,6 +2,11 @@
 
 class IndexController {
     
+    /**
+     * Вывод пользователю всех книг, авторов, жанров
+     * 
+     * @param type $id - на главной странице нету выбраных категорий
+     */
     public function actionIndex($id = false){
         $obj = new Index();
         

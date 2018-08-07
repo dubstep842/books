@@ -2,20 +2,22 @@
 
 class AdminController {
    
+    /**
+     * Вывод списка книг для добавления и редактирования
+     */
     public function actionIndex(){
         
         $obj = new Admin();
- 
+        
+        //получаем даные с глобального массива пост
         $id = filter_input(INPUT_POST, 'id',FILTER_SANITIZE_STRING);
         $version = filter_input(INPUT_POST, 'v',FILTER_SANITIZE_STRING);
+        //Проверяем данные если есть то делаем удаление книги
         if (isset($id) && ($version == 'delete')){
             $obj->deleteAuthorOrGenreList('books', $id);
-        }
-        
-        
+        }      
+        //получаем список книг
         $allBooks = $obj->getAllBooks();
-        
-        $allGenres = $obj->getAuthorOrGenreList('genre');
         
         require_once 'views/admin/index.php';
     }
