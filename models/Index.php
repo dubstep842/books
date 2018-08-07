@@ -13,7 +13,12 @@
  */
 class Index {
     
-    
+    /**
+     * Получение всех даных с указанной таблицы
+     * 
+     * @param type $table название таблицы для выборки
+     * @return type массив с строками таблицы
+     */
     public function getTable($table){
         $db = db::getConnection();
         $sql = "SELECT * FROM $table";

@@ -3,6 +3,12 @@
 
 class Search {
     
+    /**
+     * Получение всех книг одного автора
+     * 
+     * @param type $author_url имя автора
+     * @return type массив книг
+     */
     public function getBooksByAuthor($author_url){
         $db = db::getConnection();
         
@@ -20,6 +26,12 @@ class Search {
         return $result->fetchAll();
     }
     
+    /**
+     * Получение всех книг жанра автора
+     * 
+     * @param type $genre_url имя жанра
+     * @return type массив книг
+     */
     public function getBooksByGenre($genre_url){
         $db = db::getConnection();
         
@@ -37,6 +49,13 @@ class Search {
         return $result->fetchAll();
     }
     
+    
+    /**
+     * Получение всей информации о книге
+     * 
+     * @param type $book_url имя книги на трансите
+     * @return type массив с информацией о книге
+     */
     public function getBook($book_url){
         $db = db::getConnection();
         
@@ -65,8 +84,6 @@ class Search {
             foreach (array_unique($rowa) as $value) {
                 $rows['authors'][]=$value;
             }
-        }
-        if ($count){
             foreach (array_unique($rowg) as $value) {
                 $rows['genres'][]=$value;
             }

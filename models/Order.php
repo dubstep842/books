@@ -2,6 +2,15 @@
 
 class Order {
     
+    /**
+     * Отправка заказа администратору на почту
+     * 
+     * @param type $name ФИО закащика
+     * @param type $adress Адресс закащика
+     * @param type $title Название книги
+     * @param type $author Авторы книги
+     * @param type $amount Количество заказаных книг
+     */
     public static function userOrder($name,$adress,$title,$author,$amount){
         $paramsPath = ROOT . '/config/mail_params.php';
         $params = include($paramsPath);
