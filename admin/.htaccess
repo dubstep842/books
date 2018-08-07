@@ -1,0 +1,9 @@
+AddDefaultCharset utf-8
+
+AuthType Basic
+AuthName "Успешная авторизация"
+AuthUserFile C:/xampp/htdocs/books.local/.htpasswd
+Require valid-user
+<Files .htpasswd>
+   deny from all
+</Files>
